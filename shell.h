@@ -11,7 +11,7 @@
 
 /* Function prototypes */
 char *read_input(void);
-int execute_command(char *input);
+int execute_input(char *input, char *shell_name);
 void handle_sigint(int sig);
 
 #endif /* SHELL_H */

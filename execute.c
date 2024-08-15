@@ -1,28 +1,23 @@
 #include "shell.h"
 
-int execute_command(char *input)
+/**
+*execute_input - Executes the input command
+*@input: Command input from the user
+*@shell_name: The name of the shell (used for error messages)
+*Return: 1 to continue running the shell, 0 to exit
+*/
+int execute_input(char *input, char *shell_name)
 {
 pid_t pid;
 int status;
-char *args[1024];
-char *token;
-int i = 0;
-
-token = strtok(input, " ");
-while (token != NULL)
-{
-args[i++] = token;
-token = strtok(NULL, " ");
-}
-args[i] = NULL;
 
 pid = fork();
 if (pid == 0)
 /* Child process */
 {
-if (execvp(args[0], args) == -1)
+if (execlp(input, input, NULL) == -1)
 {
-perror(args[0]);
+perror(shell_name);
 exit(EXIT_FAILURE);
 }
 }
