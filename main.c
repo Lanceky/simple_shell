@@ -1,24 +1,34 @@
 #include "shell.h"
 
+/**
+ * main - Entry point for the shell program
+ * @argc: Argument count (unused)
+ * @argv: Argument vector (used to get the shell name)
+ *
+ * Return: 0 on success
+ */
 int main(int argc, char **argv)
 {
-    char *input;
-    int status = 1;
+	char *input;
+	int status = 1;
 
-    signal(SIGINT, handle_sigint);
+	(void)argc;
 
-    while (status) {
-        if (isatty(STDIN_FILENO))
-            write(STDOUT_FILENO, "hsh$ ", 5);
+	signal(SIGINT, handle_sigint);
 
-        input = read_input();
-        if (!input)
-            break;
+	while (status)
+	{
+		if (isatty(STDIN_FILENO))
+			write(STDOUT_FILENO, "#cisfun$ ", 9);
 
-        status = execute_input(input, argv[0]);
-        free(input);
-    }
+		input = read_input();
+		if (!input)
+			break;
 
-    return EXIT_SUCCESS;
+		status = execute_input(input, argv[0]);
+		free(input);
+	}
+
+	return (EXIT_SUCCESS);
 }
 
