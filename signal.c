@@ -2,11 +2,11 @@
 
 /**
  * handle_sigint - Handles the SIGINT signal (Ctrl+C)
- * @sig: Signal number (unused)
+ * @sig: The signal number
  */
 void handle_sigint(int sig)
 {
-    (void)sig;
-    write(STDOUT_FILENO, "\n#cisfun$ ", 9);
+	(void)sig;
+	write(STDOUT_FILENO, "\n#cisfun$ ", 9);
 }
 
