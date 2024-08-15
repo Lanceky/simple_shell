@@ -7,15 +7,12 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <sys/stat.h>
 #include <signal.h>
-#include <fcntl.h>
-#include <dirent.h>
-#include <errno.h>
 
 /* Function prototypes */
 char *read_input(void);
-int execute_input(char *input, char *prog_name);
+int execute_command(char *input);
 void handle_sigint(int sig);
 
 #endif /* SHELL_H */
+
