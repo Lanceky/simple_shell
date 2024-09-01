@@ -1,0 +1,5 @@
+#!/bin/bash
+#This script prints the maximum pid
+maxpid=$(cat /proc/sys/kernel/pid_max)
+echo "The maximum pid is: $maxpid"
+
