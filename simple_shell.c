@@ -52,7 +52,7 @@ int main(void)
 
 void prompt(void)
 {
-    printf("#cisfun$ ");
+    printf("#lash$ ");
 }
 
 void exec_cmd(char **args)
