@@ -15,15 +15,18 @@ char *lineptr;
 size_t n = 0;
 ssize_t nchars_read;
 /*Declaring void variables*/
-(void)ac; (void)argv;
+(void) ac;
+(void) argv;
 /*An infinite loop*/
-while(1)
+while (1)
 {
 printf("%s", prompt);
 nchars_read = getline(&lineptr, &n, stdin);
-if (nchars_read == -1){
-            printf("Exiting shell....\n");
-            return (-1);}
+if (nchars_read == -1)
+{
+	printf("Exiting shell....\n");
+	return (-1);
+}
 printf("%s\n", lineptr);
 
 free(lineptr);
