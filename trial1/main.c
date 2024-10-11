@@ -2,7 +2,7 @@
 
 int main(int ac, char **argv)
 {
-    char *prompt = "(Eshell) $ ";
+    char *prompt = "(Lash) $ ";
     char *lineptr = NULL, *lineptr_copy = NULL;
     size_t n = 0;
     ssize_t nchars_read;
@@ -10,7 +10,7 @@ int main(int ac, char **argv)
     int num_tokens = 0;
     char *token;
     int i;
-
+    void execmd(char **argv);
     /* declaring void variables */
     (void)ac;
 
