@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "main.h"
 
 int main(int ac, char **argv)
@@ -72,3 +73,5 @@ int main(int ac, char **argv)
 
     return (0);
 }
+=======
+>>>>>>> fb371d5416cb71549bf16b2e9c85e76358199dbf
