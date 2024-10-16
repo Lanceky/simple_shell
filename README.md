@@ -1,9 +1,10 @@
-#This directory contains simple Structure:
+simple_shell/
+│
+├── main.h         # Header file with prototypes, macros, and global variables
+├── main.c         # Entry point (contains main function)
+├── prompt.c       # Handles shell prompt display
+├── exec.c         # Executes the commands (using execve)
+├── builtins.c     # Built-in commands (like 'exit')
+├── utils.c        # Helper functions (e.g., string operations)
+└── Makefile       # Compilation instructions for easy build
 
-    pid.c: Contains code related to getting and displaying Process ID (PID).
-    ppid.c: Contains code related to getting and displaying Parent Process ID (PPID).
-    args.c: Contains code for handling command-line arguments.
-    input.c: Contains code for reading input.
-    split.c: Contains code for splitting strings.
-    exec.c: Contains code for executing programs using execve.
-    fork.c: Contains code for creating processes using fork and managing them.
