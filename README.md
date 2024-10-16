@@ -8,3 +8,4 @@ simple_shell/
 ├── utils.c        # Helper functions (e.g., string operations)
 └── Makefile       # Compilation instructions for easy build
 
+
