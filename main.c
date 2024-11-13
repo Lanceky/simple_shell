@@ -11,7 +11,7 @@ const char *delim =  "\n";
 char *token;
 int num_tokens = 0;
 int i;
-int counter;
+
 /*declaring void variablesi*/
 (void)ac;
 
@@ -51,11 +51,11 @@ for(i = 0; token != NULL; i++)
 	token = strtok(NULL, delim);
 }
 argv[i] = NULL;
-for (counter = 0; counter < num_tokens-1; counter++)
-{
-	printf("%s\n",argv[counter]);
-}
+/*execute the commands with exceve*/
+
 free(lineptr);
+free(lineptr_copy);
+free(argv);
 }
 return (0);
 }
