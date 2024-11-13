@@ -8,8 +8,11 @@ size_t n = 0;
 ssize_t n_read;
 char *lineptr_copy = NULL;
 const char *delim =  "\n";
+char *token;
+int num_tokens = 0;
+int i;
 /*declaring void variablesi*/
-(void)ac; (void)argv;
+(void)ac;
 
 /*infinite loop for prompt*/
 while(1)
@@ -29,6 +32,24 @@ if(lineptr_copy == NULL){
 	return(-1);
 }
 strcpy(lineptr_copy, lineptr);
+/*calculate the number of tokens required from the string*/
+token = strtok(lineptr, delim);
+while (token != NULL)
+{
+	num_tokens++;
+	token = strtok(NULL, delim);
+}
+num_tokens++;
+/*allocate space to hodl the arra of strings (token)*/
+argv = malloc(sizeof(char *) * num_tokens);
+for(i = 0; token != NULL; i++)
+{
+	argv[i] = malloc(sizeof(char) * strlen(token));
+	strcpy(argv[i], token);
+
+	token = strtok(NULL, delim);
+}
+argv[i] = NULL;
 free(lineptr);
 }
 return (0);
